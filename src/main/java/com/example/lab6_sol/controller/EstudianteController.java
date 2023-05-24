@@ -65,6 +65,8 @@ public class EstudianteController {
                 }
             } else {
                 attr.addFlashAttribute("msgGood", "Estudiante actualizado exitosamente");
+                usuario.setActivo(true);
+                usuario.setRolid(5);
                 usuarioRepository.save(usuario);
                 return "redirect:/estudiante/lista";
             }
